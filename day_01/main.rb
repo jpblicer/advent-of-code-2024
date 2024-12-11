@@ -1,5 +1,10 @@
 def compare_rows(rowA, rowB)
-  puts rowA
+  sums = []
+  rowA.each_with_index do |number, index|
+    sum = number.to_i - rowB[index].to_i
+    sums << sum.abs
+  end
+  puts sums.sum
 end
 
 def sort_rows(rowA, rowB)
@@ -26,3 +31,6 @@ def main
 end
 
 main
+
+# Test
+sort_rows([3,4,2,1,3,3], [4,3,5,3,9,3])
