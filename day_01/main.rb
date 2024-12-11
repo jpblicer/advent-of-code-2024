@@ -1,3 +1,9 @@
+def similarity_score(rowA, rowB)
+  rowA.each do |number|
+    puts rowB.count(number)
+  end
+end
+
 def compare_rows(rowA, rowB)
   sums = []
   rowA.each_with_index do |number, index|
@@ -34,3 +40,4 @@ main
 
 # Test
 sort_rows([3,4,2,1,3,3], [4,3,5,3,9,3])
+similarity_score([3,4,2,1,3,3], [4,3,5,3,9,3])
