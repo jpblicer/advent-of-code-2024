@@ -1,7 +1,11 @@
 def similarity_score(rowA, rowB)
+  similarity = []
   rowA.each do |number|
-    puts rowB.count(number)
+    similarity_count = rowB.count(number)
+    similarity_calculated = number.to_i * similarity_count.to_i
+    similarity << similarity_calculated
   end
+  puts  similarity.sum
 end
 
 def compare_rows(rowA, rowB)
@@ -17,6 +21,7 @@ def sort_rows(rowA, rowB)
   sorted_rowA = rowA.map.sort
   sorted_rowB = rowB.map.sort
   compare_rows(sorted_rowA, sorted_rowB)
+  similarity_score(sorted_rowA, sorted_rowB)
 end
 
 def parse_file_rows
@@ -39,5 +44,5 @@ end
 main
 
 # Test
-sort_rows([3,4,2,1,3,3], [4,3,5,3,9,3])
-similarity_score([3,4,2,1,3,3], [4,3,5,3,9,3])
+# sort_rows([3,4,2,1,3,3], [4,3,5,3,9,3])
+# similarity_score([3,4,2,1,3,3], [4,3,5,3,9,3])
