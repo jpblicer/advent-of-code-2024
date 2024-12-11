@@ -1,6 +1,11 @@
-def order_rows(rowA, rowB)
+def compare_rows(rowA, rowB)
+  puts rowA
+end
+
+def sort_rows(rowA, rowB)
   sorted_rowA = rowA.map.sort
   sorted_rowB = rowB.map.sort
+  compare_rows(sorted_rowA, sorted_rowB)
 end
 
 def parse_file_rows
@@ -13,7 +18,7 @@ def parse_file_rows
       end
     end
   end
-  order_rows(rowA, rowB)
+  sort_rows(rowA, rowB)
 end
 
 def main
