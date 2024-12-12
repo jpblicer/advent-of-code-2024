@@ -1,3 +1,13 @@
+def consistent_change_safe?(report)
+  if report.each_cons(2).all? {|first, second| second > first }
+    return true
+  elsif report.each_cons(2).all? {|first, second| second < first }
+    return true
+  else
+    return false
+  end
+end
+
 def distance_safe?(report)
   report.each_cons(2) do |first, second|
     distance = first - second
@@ -13,7 +23,7 @@ def safety_check(reports)
   safe = 0
   unsafe = 0
   reports.each do |report|
-    distance_safe?(report) ? safe += 1 : unsafe +=1
+    distance_safe?(report) && consistent_change_safe?(report) ? safe +=1 : unsafe +=1
   end
   puts "#{safe} reports are safe"
   puts "#{unsafe} reports are unsafe"
