@@ -1,6 +1,7 @@
 def main
-  input = File.open("input", "r")
-  puts input
+  input = File.foreach("input", "r") do |line|
+    puts line
+  end
 end
 
 
