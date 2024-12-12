@@ -49,9 +49,9 @@ def main
   safety_check(reports)
 end
 
-#main
+main
 
 
 # Test
-test_reports =[[7,6,4,2,1],[1,2,7,8,9],[9,7,6,2,1],[1,3,2,4,5],[8,6,4,4,1],[1,3,6,7,9]]
-safety_check(test_reports)
+# test_reports =[[7,6,4,2,1],[1,2,7,8,9],[9,7,6,2,1],[1,3,2,4,5],[8,6,4,4,1],[1,3,6,7,9]]
+# safety_check(test_reports)
