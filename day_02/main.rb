@@ -11,11 +11,10 @@ end
 def distance_safe?(report)
   report.each_cons(2) do |first, second|
     distance = first - second
-    if distance.abs >= 3 || distance.abs == 0
+    if distance.abs > 3 || distance.abs == 0
       return false
-    else
-      return true
     end
+    true
   end
 end
 
@@ -50,7 +49,7 @@ def main
   safety_check(reports)
 end
 
-main
+#main
 
 
 # Test
